@@ -16,16 +16,11 @@ public class Main
 {
     public static void main( String[] args )
     {
-        XmlBeanFactory factory = new XmlBeanFactory (new ClassPathResource("beans.xml"));
-        Movie mov = factory.getBean("movie", Movie.class);
-        mov.display();
-        BeanDefinitionRegistry registry = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        BeanDefinitionReader reader = new XmlBeanDefinitionReader(registry);
-        BeanFactory factory1 = (BeanFactory) reader.getRegistry();
-        Movie mov1 = factory1.getBean("movie", Movie.class);
-        mov1.display();
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Movie mov2 = context.getBean("movie",Movie.class);
-        mov2.display();
+        Movie mov = context.getBean("MovieA",Movie.class);
+        mov.display();
+        Movie mov1 = context.getBean("MovieB",Movie.class);
+        mov1.display();
+        System.out.println(mov==mov1);
     }
 }
