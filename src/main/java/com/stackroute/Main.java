@@ -17,10 +17,7 @@ public class Main
     public static void main( String[] args )
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        Movie mov = context.getBean("MovieA",Movie.class);
+        Movie mov = context.getBean("movie",Movie.class);
         mov.display();
-        Movie mov1 = context.getBean("MovieB",Movie.class);
-        mov1.display();
-        System.out.println(mov==mov1);
     }
 }
