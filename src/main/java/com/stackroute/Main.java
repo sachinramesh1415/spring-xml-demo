@@ -11,6 +11,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 
@@ -18,8 +19,8 @@ public class Main
 {
     public static void main( String[] args )
     {
-        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        BeanLifecycleDemoBean lifecycleDemoBean = context.getBean("life", BeanLifecycleDemoBean.class);
-        context.close();
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        context.getBean("life");
+        context.registerShutdownHook();
     }
 }

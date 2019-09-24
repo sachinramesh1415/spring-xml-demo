@@ -8,4 +8,5 @@ default-init-method="customInit" default-destroy-method="customDestroy">
     <bean id="life" class="com.stackroute.demo.BeanLifecycleDemoBean">
         <property name="message" value="Bean has been created"></property>
     </bean>
+    <bean class="com.stackroute.demo.BeanPostProcessorDemoBean"></bean>
 </beans>
