@@ -18,14 +18,14 @@ public class Main
     {
         XmlBeanFactory factory = new XmlBeanFactory (new ClassPathResource("beans.xml"));
         Movie mov = factory.getBean("movie", Movie.class);
-        mov.display();
+        mov.getActorDetails();
         BeanDefinitionRegistry registry = new XmlBeanFactory(new ClassPathResource("beans.xml"));
         BeanDefinitionReader reader = new XmlBeanDefinitionReader(registry);
         BeanFactory factory1 = (BeanFactory) reader.getRegistry();
         Movie mov1 = factory1.getBean("movie", Movie.class);
-        mov1.display();
+        mov1.getActorDetails();
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie mov2 = context.getBean("movie",Movie.class);
-        mov2.display();
+        mov2.getActorDetails();
     }
 }

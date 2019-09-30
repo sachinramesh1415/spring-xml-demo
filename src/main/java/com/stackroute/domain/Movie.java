@@ -5,9 +5,10 @@ public class Movie {
     public void setActor(Actor actor) {
         this.actor = actor;
     }
-    public void display() {
+    public String getActorDetails() {
         System.out.println("Actor: " + actor.getName());
         System.out.println("Gender: " + actor.getGender());
         System.out.println("Age: " + actor.getAge());
+        return actor.getName() + "," + actor.getAge() + "," + actor.getGender();
     }
 }
